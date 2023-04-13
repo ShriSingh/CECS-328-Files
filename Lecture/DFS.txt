@@ -1,0 +1,26 @@
+DFS(G):
+    for each vertex u in V[G]:
+        if color[u] <- WHITE
+            pi[u] <- NIL
+    time <- 0
+    for each vertex u in V[G]:
+        if color[u] <- WHITE
+            then DFS-VISIT(u)
+
+DFS-Visit(u):
+    color[u] <- GRAY // White Vertex u has been discovered
+    time <- time + 1
+    d[u] <- time
+    for each vertex v in Adj[u]:
+        if color[v] <- WHITE
+            then pi[v] <- u
+                DFS-Visit(v)
+    color[u] <- BLACK // Black Vertex u has finished
+    f[u] <- time <- time + 1
+
+Uses a global timestamp *time*
+Note: Use DFS for unbalanced trees
+
+Minimum Spanning Tree:
+- Spanning Tree
+    - A tree(i.e., connected, acyclic graph) which contains all the certices 
